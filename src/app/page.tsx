@@ -1,69 +1,113 @@
-import Image from "next/image";
+import Canvas3DBackground from '@/components/Canvas3DBackground';
+import MultiParallaxHero from '@/components/MultiParallaxHero';
+import SmartPlannerForm from '@/components/SmartPlannerForm';
+import Image from 'next/image';
+import { Phone, Mail, MapPin, Heart, Shield } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+    <main className="min-h-screen bg-[#0a1913] text-slate-100 relative overflow-hidden font-sans">
+      {/* 3D Three.js Floating Particle Background */}
+      <Canvas3DBackground />
+
+      {/* Header Navigation */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a1913]/80 backdrop-blur-xl border-b border-emerald-500/20 px-6 py-4">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <span className="text-2xl">🌿</span>
+            <span className="font-extrabold text-xl tracking-tight text-white">
+              TRIS MEGHALAYA
+            </span>
+            <span className="hidden sm:inline-block px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold border border-emerald-500/30">
+              COMMUNITY TRAVELS
+            </span>
+          </div>
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://wa.me/917005241197"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 font-semibold text-sm hover:bg-emerald-500 hover:text-white transition-all duration-300"
           >
+            <Phone className="w-4 h-4" />
+            <span>WhatsApp +91-7005241197</span>
+          </a>
+        </div>
+      </header>
+
+      {/* Multi-Parallax Hero Section */}
+      <MultiParallaxHero />
+
+      {/* Homestay & Culture Spotlight Section */}
+      <section className="relative z-20 py-20 px-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="relative h-[420px] rounded-3xl overflow-hidden border border-emerald-500/30 shadow-2xl group">
             <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+              src="/homestay.png"
+              alt="Traditional Khasi Homestay"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a1913] via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <span className="px-3 py-1 rounded-full bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider">
+                Barefoot Comfort
+              </span>
+              <h3 className="text-2xl font-bold text-white mt-2">
+                Live Like a Local in Khasi Villages
+              </h3>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm font-semibold">
+              <Heart className="w-4 h-4" />
+              <span>Community Rooted Tourism</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+              Beyond Ordinary Hotels: True Warmth & Local Connection
+            </h2>
+
+            <p className="text-slate-300 text-base leading-relaxed">
+              TRIS Travels partners directly with local village families across Shillong, Sohra, Dawki, and remote hills. Enjoy warm home-cooked meals by open hearths, organic tea, and untold local legends.
+            </p>
+
+            <div className="grid grid-cols-2 gap-4 pt-2">
+              <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+                <div className="text-emerald-400 font-bold text-lg mb-1">100% Native</div>
+                <div className="text-slate-400 text-xs">Local guides born in the hills</div>
+              </div>
+              <div className="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+                <div className="text-emerald-400 font-bold text-lg mb-1">Sustainable</div>
+                <div className="text-slate-400 text-xs">Empowering rural livelihoods</div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Interactive Smart Planner Form Section */}
+      <SmartPlannerForm />
+
+      {/* Footer */}
+      <footer className="relative z-20 border-t border-emerald-500/20 py-12 px-6 bg-[#06120d] text-slate-400 text-sm text-center">
+        <div className="max-w-5xl mx-auto space-y-4">
+          <div className="flex items-center justify-center gap-2 text-white font-bold text-lg">
+            <span>🌿 TRIS Meghalaya Travels</span>
+          </div>
+          <p className="max-w-md mx-auto text-slate-400">
+            Recognized by Meghalaya Tourism & NIDHI. Crafting bespoke, eco-friendly journeys across the Northeast.
+          </p>
+          <div className="flex justify-center gap-6 text-emerald-400 font-medium">
+            <span className="flex items-center gap-1.5"><Phone className="w-4 h-4" /> +91 7005241197</span>
+            <span className="flex items-center gap-1.5"><Mail className="w-4 h-4" /> trissimai03@gmail.com</span>
+            <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4" /> Shillong, Meghalaya</span>
+          </div>
+          <div className="pt-6 border-t border-slate-800 text-xs text-slate-500">
+            © 2026 TRIS Meghalaya Travels. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </main>
   );
 }
