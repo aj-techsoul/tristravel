@@ -86,7 +86,7 @@ export default function SmartPlannerForm() {
       `\nPlease share a customized itinerary & quote!`;
 
     const encoded = encodeURIComponent(message);
-    window.open(`https://wa.me/917005241197?text=${encoded}`, '_blank');
+    window.open(`https://wa.me/919362930192?text=${encoded}`, '_blank');
   };
 
   return (
@@ -102,7 +102,7 @@ export default function SmartPlannerForm() {
 
       {/* Main Glassmorphism Form Card */}
       <div className="relative bg-emerald-950/40 border border-emerald-500/20 rounded-3xl p-6 sm:p-10 backdrop-blur-xl shadow-2xl shadow-emerald-950/60">
-        
+
         {/* Stepper Header */}
         <div className="flex justify-between items-center relative mb-12">
           <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-1 bg-slate-800 z-0" />
@@ -128,20 +128,18 @@ export default function SmartPlannerForm() {
                 className="relative z-10 flex flex-col items-center gap-2 cursor-pointer group"
               >
                 <div
-                  className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 ${
-                    isActive
+                  className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 ${isActive
                       ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/50 scale-110'
                       : isDone
-                      ? 'bg-teal-600 text-white'
-                      : 'bg-slate-900 border border-slate-700 text-slate-400 group-hover:border-emerald-500/50'
-                  }`}
+                        ? 'bg-teal-600 text-white'
+                        : 'bg-slate-900 border border-slate-700 text-slate-400 group-hover:border-emerald-500/50'
+                    }`}
                 >
                   {isDone ? <CheckCircle2 className="w-5 h-5" /> : <Icon className="w-5 h-5" />}
                 </div>
                 <span
-                  className={`text-xs font-semibold hidden sm:block ${
-                    isActive ? 'text-emerald-400' : 'text-slate-400'
-                  }`}
+                  className={`text-xs font-semibold hidden sm:block ${isActive ? 'text-emerald-400' : 'text-slate-400'
+                    }`}
                 >
                   {s.label}
                 </span>
@@ -175,11 +173,10 @@ export default function SmartPlannerForm() {
                   <div
                     key={opt.title}
                     onClick={() => setState((p) => ({ ...p, duration: opt.title }))}
-                    className={`p-5 rounded-2xl border cursor-pointer transition-all duration-300 ${
-                      state.duration === opt.title
+                    className={`p-5 rounded-2xl border cursor-pointer transition-all duration-300 ${state.duration === opt.title
                         ? 'border-emerald-400 bg-emerald-500/15 shadow-lg shadow-emerald-950'
                         : 'border-slate-800 bg-slate-900/50 hover:border-emerald-500/30'
-                    }`}
+                      }`}
                   >
                     <div className="font-bold text-white text-lg mb-1">{opt.title}</div>
                     <div className="text-slate-400 text-sm">{opt.desc}</div>
@@ -235,11 +232,10 @@ export default function SmartPlannerForm() {
                   <div
                     key={opt.title}
                     onClick={() => setState((p) => ({ ...p, groupType: opt.title }))}
-                    className={`p-5 rounded-2xl border cursor-pointer transition-all duration-300 ${
-                      state.groupType === opt.title
+                    className={`p-5 rounded-2xl border cursor-pointer transition-all duration-300 ${state.groupType === opt.title
                         ? 'border-emerald-400 bg-emerald-500/15 shadow-lg shadow-emerald-950'
                         : 'border-slate-800 bg-slate-900/50 hover:border-emerald-500/30'
-                    }`}
+                      }`}
                   >
                     <div className="font-bold text-white text-lg mb-1">{opt.title}</div>
                     <div className="text-slate-400 text-sm">{opt.desc}</div>
@@ -307,11 +303,10 @@ export default function SmartPlannerForm() {
                     <div
                       key={opt.title}
                       onClick={() => toggleExp(opt.title)}
-                      className={`p-5 rounded-2xl border cursor-pointer transition-all duration-300 ${
-                        isSelected
+                      className={`p-5 rounded-2xl border cursor-pointer transition-all duration-300 ${isSelected
                           ? 'border-emerald-400 bg-emerald-500/20 shadow-lg shadow-emerald-950'
                           : 'border-slate-800 bg-slate-900/50 hover:border-emerald-500/30'
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center justify-between mb-1">
                         <span className="font-bold text-white text-lg">{opt.title}</span>
@@ -365,11 +360,10 @@ export default function SmartPlannerForm() {
                   <div
                     key={opt.title}
                     onClick={() => setState((p) => ({ ...p, stayType: opt.title }))}
-                    className={`p-4 rounded-2xl border cursor-pointer transition-all duration-300 ${
-                      state.stayType === opt.title
+                    className={`p-4 rounded-2xl border cursor-pointer transition-all duration-300 ${state.stayType === opt.title
                         ? 'border-emerald-400 bg-emerald-500/20 shadow-lg shadow-emerald-950'
                         : 'border-slate-800 bg-slate-900/50 hover:border-emerald-500/30'
-                    }`}
+                      }`}
                   >
                     <div className="font-bold text-white text-base mb-1">{opt.title}</div>
                     <div className="text-slate-400 text-xs">{opt.desc}</div>

@@ -23,13 +23,13 @@ export default function Home() {
             </span>
           </div>
           <a
-            href="https://wa.me/917005241197"
+            href="https://wa.me/9362930192"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 font-semibold text-sm hover:bg-emerald-500 hover:text-white transition-all duration-300"
           >
             <Phone className="w-4 h-4" />
-            <span>WhatsApp +91-7005241197</span>
+            <span>WhatsApp +91-9362930192</span>
           </a>
         </div>
       </header>
